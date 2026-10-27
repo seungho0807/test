@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEGA MGC COFFEE | 메가MGC커피 공식 홈페이지</title>
+  <meta name="description" content="즐거움이 커진다! 대용량 프리미엄 커피의 기준, 메가MGC커피 공식 웹사이트입니다.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFCE00%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2252%22 font-family=%22Montserrat,sans-serif%22 font-weight=%22900%22 fill=%22%23111%22>M</text></svg>">
+
+  <!-- Web Fonts: Pretendard & Montserrat/Poppins -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mega: {
+              yellow: '#FFCE00',
+              'yellow-light': '#FFE34D',
+              'yellow-dark': '#E5B800',
+              black: '#191919',
+              dark: '#111111',
+              cream: '#FAF6EE',
+              gray: '#666666',
+            }
+          },
+          fontFamily: {
+            pretendard: ['Pretendard', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis.js for Smooth Scrolling -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Swiper.js Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-900 font-pretendard antialiased selection:bg-mega-yellow selection:text-black">
+
+  <!-- ========================================================================= -->
+  <!-- 1. GNB / HEADER                                                           -->
+  <!-- ========================================================================= -->
+  <header id="main-header" class="sticky top-0 z-40 bg-[#FFCE00] border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
+      
+      <!-- BRAND LOGO -->
+      <a href="#" class="flex items-center gap-2 group focus:outline-none" aria-label="메가MGC커피 홈으로 이동">
+        <div class="flex items-center tracking-tight select-none">
+          <span class="font-montserrat font-black text-2xl md:text-3xl text-black">MEGA</span>
+          <!-- Cup Emblem Badge -->
+          <div class="mx-1 px-1.5 py-0.5 bg-black text-[#FFCE00] rounded font-montserrat font-black text-[11px] md:text-xs inline-flex items-center justify-center shadow-xs">
+            MGC
+          </div>
+          <span class="font-montserrat font-black text-2xl md:text-3xl text-black">COFFEE</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav class="hidden md:flex items-center space-x-8 lg:space-x-12">
+        <a href="#mega-menu" class="font-montserrat font-extrabold text-black text-sm lg:text-base tracking-wider hover:text-white transition-colors duration-200">MENU</a>
+        <a href="#mega-order" class="font-montserrat font-extrabold text-black text-sm lg:text-base tracking-wider hover:text-white transition-colors duration-200 open-store-modal">STORE</a>
+        <a href="#mega-event" class="font-montserrat font-extrabold text-black text-sm lg:text-base tracking-wider hover:text-white transition-colors duration-200">EVENT</a>
+        <a href="#footer" class="font-montserrat font-extrabold text-black text-sm lg:text-base tracking-wider hover:text-white transition-colors duration-200">BRAND</a>
+        <a href="#mega-order" class="font-montserrat font-extrabold text-black text-sm lg:text-base tracking-wider hover:text-white transition-colors duration-200 open-order-modal">ORDER</a>
+      </nav>
+
+      <!-- HAMBURGER BUTTON (MOBILE) -->
+      <div class="flex items-center">
+        <button id="hamburger-btn" type="button" class="p-2 text-black hover:bg-black/10 rounded-xl transition-colors focus:outline-none" aria-label="메뉴 열기">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- MOBILE DRAWER NAVIGATION                                                  -->
+  <!-- ========================================================================= -->
+  <div id="drawer-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <!-- Drawer Top -->
+    <div class="p-5 bg-[#FFCE00] flex items-center justify-between border-b border-black/10">
+      <div class="flex items-center gap-1 font-montserrat font-black text-xl text-black">
+        <span>MEGA</span>
+        <span class="text-xs bg-black text-[#FFCE00] px-1 py-0.5 rounded font-black">MGC</span>
+        <span>COFFEE</span>
+      </div>
+      <button id="close-menu-btn" class="p-1.5 text-black hover:bg-black/10 rounded-full transition-colors" aria-label="메뉴 닫기">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Quick User Links -->
+    <div class="grid grid-cols-2 gap-2 p-4 bg-gray-50 border-b border-gray-100">
+      <button class="open-store-modal py-2.5 px-3 bg-white border border-gray-200 rounded-xl font-bold text-xs text-gray-800 flex items-center justify-center gap-1.5 shadow-xs hover:border-black transition">
+        <i data-lucide="map-pin" class="w-4 h-4 text-[#E5B800]"></i>
+        <span>가까운 매장</span>
+      </button>
+      <button class="open-order-modal py-2.5 px-3 bg-[#FFCE00] rounded-xl font-bold text-xs text-gray-950 flex items-center justify-center gap-1.5 shadow-xs hover:bg-yellow-400 transition">
+        <i data-lucide="coffee" class="w-4 h-4 text-gray-900"></i>
+        <span>메가오더 주문</span>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 overflow-y-auto p-4 space-y-1">
+      <a href="#mega-menu" class="drawer-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl font-bold text-gray-800 hover:bg-yellow-50 hover:text-black transition">
+        <span class="flex items-center gap-2.5">
+          <i data-lucide="coffee" class="w-4 h-4 text-gray-500"></i>
+          <span>MENU (메뉴 소개)</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#mega-order" class="drawer-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl font-bold text-gray-800 hover:bg-yellow-50 hover:text-black transition open-store-modal">
+        <span class="flex items-center gap-2.5">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+          <span>STORE (매장 찾기)</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#mega-event" class="drawer-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl font-bold text-gray-800 hover:bg-yellow-50 hover:text-black transition">
+        <span class="flex items-center gap-2.5">
+          <i data-lucide="sparkles" class="w-4 h-4 text-gray-500"></i>
+          <span>EVENT (이벤트 & 프로모션)</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#footer" class="drawer-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl font-bold text-gray-800 hover:bg-yellow-50 hover:text-black transition">
+        <span class="flex items-center gap-2.5">
+          <i data-lucide="shield" class="w-4 h-4 text-gray-500"></i>
+          <span>BRAND (브랜드 스토리)</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#mega-order" class="drawer-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl font-bold text-gray-800 hover:bg-yellow-50 hover:text-black transition open-order-modal">
+        <span class="flex items-center gap-2.5">
+          <i data-lucide="smartphone" class="w-4 h-4 text-gray-500"></i>
+          <span>ORDER (간편 메가오더)</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+    </nav>
+
+    <!-- Drawer Footer -->
+    <div class="p-5 bg-gray-50 border-t border-gray-100 text-xs text-gray-500">
+      <p class="font-bold text-gray-800">메가MGC커피 고객센터</p>
+      <p class="text-base font-black text-black mt-0.5">1588-8298</p>
+      <p class="mt-1 text-[11px] text-gray-400">운영시간 09:00 ~ 18:00 (주말/공휴일 휴무)</p>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN HERO BANNER (Swiper.js Slider)                                    -->
+  <!-- ========================================================================= -->
+  <section class="relative w-full bg-[#1A110A] overflow-hidden select-none">
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- SLIDE 1: 달콤한 가을을 담은 신메뉴 출시 (REFERENCE MATCH) -->
+        <div class="swiper-slide relative min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-center">
+          <!-- Background Autumn Visual -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="images/hero-banner.png" 
+              alt="가을 신메뉴 출시 메인 배너" 
+              class="w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.05]"
+              onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80'"
+            >
+            <!-- Contrast Gradients -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Slide Content -->
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
+            <div class="max-w-xl text-white space-y-4 md:space-y-6">
+              
+              <!-- Stylized "NEW!" Badge -->
+              <div class="inline-block">
+                <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FFCE00] text-black font-montserrat font-black text-sm tracking-wider shadow-xl animate-float-badge">
+                  <i data-lucide="sparkles" class="w-4 h-4 fill-black"></i>
+                  NEW!
+                </span>
+              </div>
+
+              <!-- Main Copy -->
+              <div class="space-y-2">
+                <p class="text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight text-yellow-100/90 drop-shadow">
+                  달콤한 가을을 담은
+                </p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-lg">
+                  신메뉴 출시
+                </h1>
+              </div>
+
+              <!-- Short Description -->
+              <p class="text-sm sm:text-base lg:text-lg text-gray-200 font-light leading-relaxed max-w-lg drop-shadow">
+                지금, 메가MGC커피에서만 만날 수 있는<br class="hidden sm:inline">
+                <strong class="font-bold text-yellow-300">시즌 한정 메뉴</strong>를 만나보세요!
+              </p>
+
+              <!-- CTA Button -->
+              <div class="pt-2">
+                <button id="season-detail-btn" type="button" class="group inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#FFCE00] hover:bg-yellow-300 text-black font-extrabold text-sm sm:text-base shadow-2xl hover:shadow-yellow-500/30 transform hover:-translate-y-0.5 transition-all">
+                  <span>자세히 보기</span>
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: 시그니처 프라페 & 퐁크러쉬 -->
+        <div class="swiper-slide relative min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-center bg-[#1a2e3b]">
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=2000&q=80" 
+              alt="메가 퐁크러쉬 시그니처 음료" 
+              class="w-full h-full object-cover object-center filter brightness-[0.75]"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
+            <div class="max-w-xl text-white space-y-4 md:space-y-6">
+              
+              <div class="inline-block">
+                <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FFCE00] text-black font-montserrat font-black text-sm tracking-wider shadow-xl">
+                  <i data-lucide="zap" class="w-4 h-4 fill-black"></i>
+                  BESTSELLER
+                </span>
+              </div>
+
+              <div class="space-y-2">
+                <p class="text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight text-amber-200 drop-shadow">
+                  바삭하고 달콤한 즐거움
+                </p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-lg">
+                  메가 퐁크러쉬
+                </h2>
+              </div>
+
+              <p class="text-sm sm:text-base lg:text-lg text-gray-200 font-light leading-relaxed max-w-lg drop-shadow">
+                바삭한 죠리퐁이 듬뿍 올라간 메가커피만의 시그니처!<br class="hidden sm:inline">
+                오직 메가MGC커피에서만 즐기는 원조 프라페의 매력.
+              </p>
+
+              <div class="pt-2">
+                <a href="#mega-menu" class="group inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#FFCE00] hover:bg-yellow-300 text-black font-extrabold text-sm sm:text-base shadow-2xl transition-all">
+                  <span>메뉴 보러가기</span>
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: 100% 프리미엄 아라비카 원두 스토리 -->
+        <div class="swiper-slide relative min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-center bg-[#251508]">
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=2000&q=80" 
+              alt="100% 아라비카 프리미엄 원두" 
+              class="w-full h-full object-cover object-center filter brightness-[0.7]"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
+            <div class="max-w-xl text-white space-y-4 md:space-y-6">
+              
+              <div class="inline-block">
+                <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FFCE00] text-black font-montserrat font-black text-sm tracking-wider shadow-xl">
+                  <i data-lucide="coffee" class="w-4 h-4 fill-black"></i>
+                  SPECIALTY COFFEE
+                </span>
+              </div>
+
+              <div class="space-y-2">
+                <p class="text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight text-yellow-100/90 drop-shadow">
+                  깊고 진한 풍미의 원천
+                </p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-lg">
+                  메가 아메리카노
+                </h2>
+              </div>
+
+              <p class="text-sm sm:text-base lg:text-lg text-gray-200 font-light leading-relaxed max-w-lg drop-shadow">
+                매일 신선하게 로스팅되는 100% 프리미엄 아라비카 원두.<br class="hidden sm:inline">
+                대용량(24oz)으로 하루 종일 여유롭게 즐기는 진한 풍미!
+              </p>
+
+              <div class="pt-2">
+                <button class="open-order-modal group inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#FFCE00] hover:bg-yellow-300 text-black font-extrabold text-sm sm:text-base shadow-2xl transition-all">
+                  <span>지금 바로 주문</span>
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Swiper Controls -->
+      <div class="hero-pagination absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center"></div>
+
+      <!-- Hero Prev/Next Arrows (Desktop) -->
+      <button class="hero-prev-btn absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/40 hover:bg-[#FFCE00] hover:text-black text-white flex items-center justify-center transition-all duration-300 backdrop-blur-xs border border-white/20 focus:outline-none" aria-label="이전 배너 슬라이드">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button class="hero-next-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/40 hover:bg-[#FFCE00] hover:text-black text-white flex items-center justify-center transition-all duration-300 backdrop-blur-xs border border-white/20 focus:outline-none" aria-label="다음 배너 슬라이드">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MEGA MENU SECTION (Swiper.js Card Carousel)                            -->
+  <!-- ========================================================================= -->
+  <section id="mega-menu" class="py-16 md:py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="section-header flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-gray-100">
+        <div>
+          <!-- Top Yellow Accent Bar -->
+          <div class="yellow-bar mb-3"></div>
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight font-montserrat text-black flex items-center gap-2">
+            <span>MEGA</span>
+            <span class="text-[#FFCE00]">MENU</span>
+          </h2>
+          <p class="mt-1 text-sm md:text-base text-gray-500 font-medium">
+            다양한 메뉴로 만나는 메가MGC커피
+          </p>
+        </div>
+
+        <!-- Carousel Navigation Arrows (Reference layout with < and >) -->
+        <div class="flex items-center gap-2 mt-4 sm:mt-0">
+          <button id="prev-menu-btn" class="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all shadow-xs focus:outline-none" aria-label="이전 메뉴">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button id="next-menu-btn" class="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all shadow-xs focus:outline-none" aria-label="다음 메뉴">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-6 select-none">
+        <button data-category="all" class="menu-category-tab category-tab px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-gray-900 text-white border border-gray-900 shadow-sm transition-all whitespace-nowrap active">전체보기</button>
+        <button data-category="coffee" class="menu-category-tab category-tab px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-white text-gray-700 border border-gray-200 hover:border-gray-400 transition-all whitespace-nowrap">커피 (Coffee)</button>
+        <button data-category="latte" class="menu-category-tab category-tab px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-white text-gray-700 border border-gray-200 hover:border-gray-400 transition-all whitespace-nowrap">라떼 & 곡물</button>
+        <button data-category="frappe" class="menu-category-tab category-tab px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-white text-gray-700 border border-gray-200 hover:border-gray-400 transition-all whitespace-nowrap">프라페 & 스무디</button>
+        <button data-category="ade" class="menu-category-tab category-tab px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-white text-gray-700 border border-gray-200 hover:border-gray-400 transition-all whitespace-nowrap">에이드 & 티</button>
+      </div>
+
+      <!-- Swiper Menu Carousel -->
+      <div class="swiper menu-swiper">
+        <div class="swiper-wrapper">
+
+          <!-- CARD 1: 아메리카노 (REFERENCE ITEM) -->
+          <div class="swiper-slide" data-category="coffee">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3">
+                  <img 
+                    src="images/menu-americano.png" 
+                    alt="아메리카노" 
+                    class="w-full h-full object-cover rounded-xl"
+                    onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80'"
+                  >
+                  <div class="absolute top-4 left-4 bg-black/80 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md backdrop-blur-xs">
+                    SIGNATURE
+                  </div>
+                  <div class="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-sm group-hover:bg-[#FFCE00] transition-colors">
+                    <i data-lucide="coffee" class="w-4 h-4 text-gray-900"></i>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">아메리카노</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">깊고 풍부한 바디감의 프리미엄 아라비카 원두</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">2,000원</span>
+                <span class="menu-tag text-xs font-bold text-[#C59B00] bg-yellow-50 px-2 py-0.5 rounded">HOT / ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: 카페라떼 (REFERENCE ITEM) -->
+          <div class="swiper-slide" data-category="coffee">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3">
+                  <img 
+                    src="images/menu-latte.png" 
+                    alt="카페라떼" 
+                    class="w-full h-full object-cover rounded-xl"
+                    onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=600&q=80'"
+                  >
+                  <div class="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-sm group-hover:bg-[#FFCE00] transition-colors">
+                    <i data-lucide="coffee" class="w-4 h-4 text-gray-900"></i>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">카페라떼</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">고소한 신선 우유와 에스프레소의 조화</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">3,500원</span>
+                <span class="menu-tag text-xs font-bold text-[#C59B00] bg-yellow-50 px-2 py-0.5 rounded">HOT / ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: 딸기라떼 (REFERENCE ITEM) -->
+          <div class="swiper-slide" data-category="latte">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3 bg-[#FDF2F4]">
+                  <img 
+                    src="images/menu-strawberry.png" 
+                    alt="딸기라떼" 
+                    class="w-full h-full object-cover rounded-xl"
+                    onerror="this.src='https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=600&q=80'"
+                  >
+                  <div class="absolute top-4 left-4 bg-rose-500 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                    POPULAR
+                  </div>
+                  <div class="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-sm group-hover:bg-[#FFCE00] transition-colors">
+                    <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">딸기라떼</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">상큼 달콤한 국내산 딸기 과육 가득</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">4,300원</span>
+                <span class="menu-tag text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">ONLY ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: 미숫가루 (REFERENCE ITEM) -->
+          <div class="swiper-slide" data-category="latte">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3 bg-[#F7F4EE]">
+                  <img 
+                    src="images/menu-misutgaru.png" 
+                    alt="미숫가루" 
+                    class="w-full h-full object-cover rounded-xl"
+                    onerror="this.src='https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80'"
+                  >
+                  <div class="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-sm group-hover:bg-[#FFCE00] transition-colors">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">미숫가루</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">구수한 곡물의 진한 고소함과 든든한 한 끼</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">3,000원</span>
+                <span class="menu-tag text-xs font-bold text-[#C59B00] bg-yellow-50 px-2 py-0.5 rounded">HOT / ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 5: 퐁크러쉬(플레인) -->
+          <div class="swiper-slide" data-category="frappe">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3 bg-[#FFF8E7]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" 
+                    alt="퐁크러쉬 플레인" 
+                    class="w-full h-full object-cover rounded-xl"
+                  >
+                  <div class="absolute top-4 left-4 bg-amber-500 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                    MEGA ONLY
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">퐁크러쉬 (플레인)</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">죠리퐁 과자가 듬뿍 올라간 대표 시그니처</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">3,900원</span>
+                <span class="menu-tag text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">ONLY ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 6: 큐브라떼 -->
+          <div class="swiper-slide" data-category="coffee">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3 bg-[#F5F0EA]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80" 
+                    alt="큐브라떼" 
+                    class="w-full h-full object-cover rounded-xl"
+                  >
+                  <div class="absolute top-4 left-4 bg-stone-700 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                    HIT
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">큐브라떼</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">녹을수록 더욱 진해지는 에스프레소 큐브</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">4,200원</span>
+                <span class="menu-tag text-xs font-bold text-stone-700 bg-stone-100 px-2 py-0.5 rounded">ONLY ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 7: 메가에이드 -->
+          <div class="swiper-slide" data-category="ade">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3 bg-[#FFFDE7]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" 
+                    alt="메가에이드" 
+                    class="w-full h-full object-cover rounded-xl"
+                  >
+                  <div class="absolute top-4 left-4 bg-lime-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                    REFRESH
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">메가에이드</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">레몬, 라임, 자몽이 어우러진 짜릿한 탄산</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">3,900원</span>
+                <span class="menu-tag text-xs font-bold text-lime-700 bg-lime-50 px-2 py-0.5 rounded">ONLY ICE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 8: 유니콘 프라페 -->
+          <div class="swiper-slide" data-category="frappe">
+            <div class="menu-card w-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="menu-thumb relative w-full h-[220px] sm:h-[240px] flex items-center justify-center p-3 bg-[#F5F0FF]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80" 
+                    alt="유니콘 프라페" 
+                    class="w-full h-full object-cover rounded-xl"
+                  >
+                  <div class="absolute top-4 left-4 bg-purple-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                    SPECIAL
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-black">유니콘 프라페</h3>
+                  <p class="menu-desc text-xs text-gray-500 mt-1 line-clamp-1">신비로운 컬러와 상큼달콤한 마법의 맛</p>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span class="menu-price text-lg sm:text-xl font-extrabold text-gray-900">4,800원</span>
+                <span class="menu-tag text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">ONLY ICE</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. MEGA ORDER SECTION (REFERENCE MATCH)                                   -->
+  <!-- ========================================================================= -->
+  <section id="mega-order" class="py-16 md:py-24 bg-[#FAF6EE] relative overflow-hidden border-y border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- Left Side: Copy and Two Main Buttons -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Top Yellow Accent Bar -->
+          <div class="yellow-bar"></div>
+          
+          <div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-montserrat tracking-tight text-gray-900 flex items-center gap-2">
+              <span>MEGA</span>
+              <span class="text-[#FFCE00]">ORDER</span>
+            </h2>
+            <p class="mt-2 text-base sm:text-xl text-gray-800 font-bold">
+              간편하게 주문하고 바로 픽업!
+            </p>
+          </div>
+
+          <!-- Description -->
+          <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+            메가MGC커피 앱으로 줄 설 필요 없이 스마트하게 주문하세요.<br class="hidden sm:inline">
+            가까운 매장을 선택하고 터치 한 번으로 빠르게 픽업할 수 있습니다.
+          </p>
+
+          <!-- 2 Action Buttons Side by Side (Reference Match) -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 max-w-md">
+            
+            <!-- Button 1: 매장 선택 (Yellow Pill) -->
+            <button class="open-store-modal flex-1 bg-[#FFCE00] hover:bg-yellow-400 text-gray-950 font-black text-base px-6 py-4 rounded-full flex items-center justify-between shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none">
+              <span>매장 선택</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+
+            <!-- Button 2: 메뉴 주문 (White Pill with Border) -->
+            <button class="open-order-modal flex-1 bg-white hover:bg-gray-50 border-2 border-gray-900/10 hover:border-gray-900/30 text-gray-950 font-black text-base px-6 py-4 rounded-full flex items-center justify-between shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none">
+              <span>메뉴 주문</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- Benefit Note -->
+          <div class="flex items-center gap-2 pt-2 text-xs font-semibold text-gray-500">
+            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#FFCE00] text-black font-black text-[10px]">★</span>
+            <span>메가스탬프 10개 적립 시 아메리카노 1잔 무료 쿠폰 즉시 지급!</span>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Phone Visual Mockup & Store Front -->
+        <div class="lg:col-span-6 relative flex items-center justify-center order-visual-container">
+          <div class="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
+            <img 
+              src="images/order-banner.png" 
+              alt="메가오더 스마트폰 주문 및 매장 픽업 비주얼" 
+              class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500"
+              onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80'"
+            >
+            <!-- Badge Overlay -->
+            <div class="absolute bottom-4 left-4 bg-black/85 text-white text-xs px-3.5 py-1.5 rounded-full backdrop-blur-xs font-bold flex items-center gap-1.5 shadow">
+              <span class="w-2 h-2 rounded-full bg-[#FFCE00] animate-ping"></span>
+              <span>픽업 소요 시간 평균 3~5분</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. MEGA EVENT SECTION (REFERENCE MATCH)                                   -->
+  <!-- ========================================================================= -->
+  <section id="mega-event" class="py-16 md:py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="section-header mb-10">
+        <!-- Top Yellow Accent Bar -->
+        <div class="yellow-bar mb-3"></div>
+        <h2 class="text-3xl md:text-4xl font-black font-montserrat tracking-tight text-gray-900 flex items-center gap-2">
+          <span>MEGA</span>
+          <span class="text-[#FFCE00]">EVENT</span>
+        </h2>
+        <p class="mt-1 text-sm md:text-base text-gray-500 font-medium">
+          지금 진행 중인 다양한 이벤트를 확인해보세요!
+        </p>
+      </div>
+
+      <!-- 2 Main Horizontal Event Cards (Reference Match) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- EVENT BANNER 1: 지구인들아 힘내! (REFERENCE ITEM) -->
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#E8F5E9] flex flex-col cursor-pointer">
+          <div class="relative h-60 sm:h-72 overflow-hidden bg-emerald-50">
+            <img 
+              src="images/event-banner1.png" 
+              alt="지구인들아 힘내 프로모션" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <!-- Event Badge -->
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white font-black text-xs px-3.5 py-1 rounded-full shadow-md">
+              진행중 이벤트
+            </div>
+            <!-- Banner Bottom Copy -->
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs text-emerald-300 font-bold uppercase tracking-wider">SEASON SPECIAL</span>
+              <h3 class="text-xl sm:text-2xl font-black mt-0.5">지구인들아 힘내!</h3>
+              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">활력 충전 상큼달콤 비타민 음료 & 디저트 페스티벌</p>
+            </div>
+          </div>
+          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
+            <span class="text-xs text-gray-400 font-medium">이벤트 기간: 2026.09.01 ~ 11.30</span>
+            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
+              자세히 보기
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- EVENT BANNER 2: 우리들의 여름 정거장 (REFERENCE ITEM) -->
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#E1F5FE] flex flex-col cursor-pointer">
+          <div class="relative h-60 sm:h-72 overflow-hidden bg-sky-50">
+            <img 
+              src="images/event-banner2.png" 
+              alt="우리들의 여름 정거장 프로모션" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <!-- Event Badge -->
+            <div class="absolute top-4 left-4 bg-[#FFCE00] text-black font-black text-xs px-3.5 py-1 rounded-full shadow-md">
+              시즌 프로모션
+            </div>
+            <!-- Banner Bottom Copy -->
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs text-yellow-300 font-bold uppercase tracking-wider">MEGA COLLABORATION</span>
+              <h3 class="text-xl sm:text-2xl font-black mt-0.5">우리들의 여름 정거장</h3>
+              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">청량한 과일 에이드와 달콤한 디저트의 완벽한 힐링</p>
+            </div>
+          </div>
+          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
+            <span class="text-xs text-gray-400 font-medium">이벤트 기간: 2026.10.01 ~ 12.15</span>
+            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
+              자세히 보기
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hidden Extended Event Cards (Toggled via "이벤트 더보기" Button) -->
+      <div id="hidden-events" class="hidden grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-6">
+        
+        <!-- EVENT BANNER 3: 메가오더 첫 주문 할인 -->
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#FFF3E0] flex flex-col cursor-pointer">
+          <div class="relative h-60 sm:h-72 overflow-hidden bg-orange-50">
+            <img 
+              src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&q=80" 
+              alt="메가오더 첫 주문 프로모션" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-orange-500 text-white font-black text-xs px-3.5 py-1 rounded-full shadow-md">
+              APP EXCLUSIVE
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs text-orange-300 font-bold uppercase tracking-wider">APP DISCOUNT</span>
+              <h3 class="text-xl sm:text-2xl font-black mt-0.5">메가오더 첫 주문 1,000원 쿠폰</h3>
+              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">앱 신규 가입 즉시 지급되는 시원한 웰컴 혜택</p>
+            </div>
+          </div>
+          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
+            <span class="text-xs text-gray-400 font-medium">상시 혜택 제공</span>
+            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
+              쿠폰 받기
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- EVENT BANNER 4: 텀블러 에코 캠페인 -->
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#E8EAF6] flex flex-col cursor-pointer">
+          <div class="relative h-60 sm:h-72 overflow-hidden bg-indigo-50">
+            <img 
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" 
+              alt="에코 텀블러 캠페인" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-indigo-500 text-white font-black text-xs px-3.5 py-1 rounded-full shadow-md">
+              ECO CAMPAIGN
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs text-indigo-300 font-bold uppercase tracking-wider">SAVE THE EARTH</span>
+              <h3 class="text-xl sm:text-2xl font-black mt-0.5">개인 텀블러 지참 시 300원 할인</h3>
+              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">환경도 지키고 할인도 받는 착한 데일리 습관</p>
+            </div>
+          </div>
+          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
+            <span class="text-xs text-gray-400 font-medium">상시 진행</span>
+            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
+              자세히 보기
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centered Outline Button (Reference Match: 이벤트 더보기 >) -->
+      <div class="mt-10 text-center">
+        <button id="more-event-btn" type="button" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-gray-900 text-gray-900 font-extrabold text-sm hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-xs focus:outline-none">
+          <span id="more-event-btn-text">이벤트 더보기</span>
+          <svg id="more-event-btn-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. FOOTER SECTION (REFERENCE MATCH)                                       -->
+  <!-- ========================================================================= -->
+  <footer id="footer" class="bg-[#181818] text-gray-400 pt-16 pb-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Row: Brand Logo & Navigation Links -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-gray-800">
+        
+        <!-- Logo -->
+        <div class="flex items-center gap-1.5 font-montserrat font-black text-2xl tracking-tight text-white select-none">
+          <span>MEGA</span>
+          <span>COFFEE</span>
+        </div>
+
+        <!-- Footer Navigation Links -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-montserrat font-bold text-gray-300">
+          <a href="#mega-menu" class="hover:text-[#FFCE00] transition-colors">MENU</a>
+          <span class="text-gray-700">|</span>
+          <a href="#mega-order" class="hover:text-[#FFCE00] transition-colors open-store-modal">STORE</a>
+          <span class="text-gray-700">|</span>
+          <a href="#mega-event" class="hover:text-[#FFCE00] transition-colors">EVENT</a>
+          <span class="text-gray-700">|</span>
+          <a href="#footer" class="hover:text-[#FFCE00] transition-colors">BRAND</a>
+          <span class="text-gray-700">|</span>
+          <a href="#mega-order" class="hover:text-[#FFCE00] transition-colors open-order-modal">ORDER</a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Company Info & Terms -->
+      <div class="pt-8 space-y-4 text-xs text-gray-500 leading-relaxed">
+        
+        <!-- Legal & CS Links -->
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <span class="font-bold text-gray-200">고객센터 1588-8298</span>
+          <span class="text-gray-700">|</span>
+          <a href="#" class="text-gray-300 font-bold hover:underline hover:text-white">개인정보처리방침</a>
+          <span class="text-gray-700">|</span>
+          <a href="#" class="hover:underline hover:text-gray-300">이용약관</a>
+          <span class="text-gray-700">|</span>
+          <a href="#" class="hover:underline hover:text-gray-300">가맹문의</a>
+          <span class="text-gray-700">|</span>
+          <a href="#" class="hover:underline hover:text-gray-300">매장개설안내</a>
+        </div>
+
+        <!-- Business Details -->
+        <p>
+          주식회사 앤하우스 | 대표이사: 김대영 | 서울특별시 강남구 강남대로 518 11층, 13층<br class="hidden sm:inline">
+          사업자등록번호: 214-88-75123 | 통신판매업신고: 제2020-서울강남-01987호 | 개인정보관리책임자: 김대영
+        </p>
+
+        <!-- Copyright -->
+        <p class="text-[11px] text-gray-600 font-montserrat">
+          Copyright © MEGA MGC COFFEE. All Rights Reserved.
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING SCROLL TO TOP BUTTON                                             -->
+  <!-- ========================================================================= -->
+  <button id="scroll-top-btn" type="button" class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-black text-[#FFCE00] shadow-2xl hover:bg-yellow-400 hover:text-black transition-all duration-300 opacity-0 invisible translate-y-4 focus:outline-none" aria-label="맨 위로 가기">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 1: STORE SELECT MODAL                                               -->
+  <!-- ========================================================================= -->
+  <div id="store-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+  <div id="store-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden opacity-0 scale-95 transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[85vh]">
+      <!-- Modal Header -->
+      <div class="p-6 bg-[#FFCE00] flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-6 h-6 text-black"></i>
+          <h3 class="font-black text-xl text-black">매장 선택</h3>
+        </div>
+        <button id="close-store-modal" class="p-1 hover:bg-black/10 rounded-full transition-colors" aria-label="매장 선택 닫기">
+          <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <!-- Search Input -->
+        <div class="relative">
+          <input id="store-search-input" type="text" placeholder="매장명 또는 지역명을 검색하세요 (예: 강남, 역삼)" class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black transition">
+          <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5"></i>
+        </div>
+
+        <p class="text-xs font-bold text-gray-500 pt-1">현재 위치 기준 가까운 추천 매장</p>
+        
+        <!-- Stores List -->
+        <div class="space-y-2.5 max-h-60 overflow-y-auto pr-1">
+          
+          <div class="store-item p-3.5 rounded-xl border border-gray-200 hover:border-[#FFCE00] hover:bg-yellow-50/50 cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <span class="store-name font-bold text-sm text-gray-900">메가MGC커피 강남본점</span>
+              <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">120m</span>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">서울 강남구 강남대로 518 1층</p>
+            <div class="mt-2 flex items-center justify-between">
+              <div class="flex items-center gap-1.5 text-[11px] text-green-600 font-bold">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                영업중 (07:30 ~ 23:00)
+              </div>
+              <span class="text-xs font-bold text-black bg-[#FFCE00] px-2.5 py-1 rounded-md">선택</span>
+            </div>
+          </div>
+
+          <div class="store-item p-3.5 rounded-xl border border-gray-200 hover:border-[#FFCE00] hover:bg-yellow-50/50 cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <span class="store-name font-bold text-sm text-gray-900">메가MGC커피 역삼역점</span>
+              <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">420m</span>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">서울 강남구 테헤란로 142 1층</p>
+            <div class="mt-2 flex items-center justify-between">
+              <div class="flex items-center gap-1.5 text-[11px] text-green-600 font-bold">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                영업중 (08:00 ~ 22:30)
+              </div>
+              <span class="text-xs font-bold text-gray-700 bg-gray-100 px-2.5 py-1 rounded-md">선택</span>
+            </div>
+          </div>
+
+          <div class="store-item p-3.5 rounded-xl border border-gray-200 hover:border-[#FFCE00] hover:bg-yellow-50/50 cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <span class="store-name font-bold text-sm text-gray-900">메가MGC커피 선릉역점</span>
+              <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">890m</span>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">서울 강남구 선릉로 428 1층</p>
+            <div class="mt-2 flex items-center justify-between">
+              <div class="flex items-center gap-1.5 text-[11px] text-green-600 font-bold">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                영업중 (08:00 ~ 23:00)
+              </div>
+              <span class="text-xs font-bold text-gray-700 bg-gray-100 px-2.5 py-1 rounded-md">선택</span>
+            </div>
+          </div>
+
+        </div>
+
+        <button onclick="alert('가장 가까운 메가MGC커피 강남본점이 선택되었습니다.');" class="w-full bg-[#FFCE00] hover:bg-yellow-400 text-black font-extrabold py-3.5 rounded-xl text-sm transition">
+          현재 매장으로 주문 시작
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 2: ORDER / APP DOWNLOAD MODAL                                       -->
+  <!-- ========================================================================= -->
+  <div id="order-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+  <div id="order-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden opacity-0 scale-95 transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden border border-gray-100">
+      <div class="p-6 bg-black text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="coffee" class="w-6 h-6 text-[#FFCE00]"></i>
+          <h3 class="font-extrabold text-lg text-white">메가오더 주문</h3>
+        </div>
+        <button id="close-order-modal" class="p-1 hover:bg-white/10 rounded-full transition">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4 text-center">
+        <div class="w-16 h-16 bg-[#FFCE00] rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+          <i data-lucide="smartphone" class="w-8 h-8 text-black"></i>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-black text-gray-900">간편하게 메가오더로 주문하세요!</h4>
+          <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">
+            원하는 메뉴를 담고 바로 결제하면 대기 없이 빠르게 음료를 픽업할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 pt-2">
+          <button onclick="alert('Google Play 스토어로 이동합니다.');" class="p-3 border border-gray-200 rounded-xl hover:border-black font-bold text-xs text-gray-800 flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            Google Play
+          </button>
+          <button onclick="alert('Apple App Store로 이동합니다.');" class="p-3 border border-gray-200 rounded-xl hover:border-black font-bold text-xs text-gray-800 flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            App Store
+          </button>
+        </div>
+
+        <button onclick="alert('메가오더 웹 주문 화면으로 연결되었습니다!');" class="w-full bg-[#FFCE00] hover:bg-yellow-400 text-black font-extrabold py-3.5 rounded-xl text-sm transition">
+          지금 웹으로 바로 주문하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 3: SEASONAL DETAIL MODAL                                            -->
+  <!-- ========================================================================= -->
+  <div id="season-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+  <div id="season-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden opacity-0 scale-95 transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[85vh]">
+      <div class="p-6 bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 text-white flex items-center justify-between">
+        <div>
+          <span class="text-xs bg-[#FFCE00] text-black font-black px-2.5 py-0.5 rounded">AUTUMN SPECIAL</span>
+          <h3 class="font-black text-xl text-white mt-1">달콤한 가을 신메뉴 라인업</h3>
+        </div>
+        <button id="close-season-modal" class="p-1 hover:bg-white/10 rounded-full transition">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <!-- Item 1 -->
+        <div class="flex gap-4 items-center p-3.5 bg-amber-50/70 rounded-2xl border border-amber-100">
+          <img src="images/menu-latte.png" alt="밤 카라멜 라떼" class="w-16 h-16 object-cover rounded-xl shadow-xs" onerror="this.src='https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=200&q=80'">
+          <div class="flex-1">
+            <span class="text-xs font-bold text-amber-700">시즌 대표메뉴</span>
+            <h4 class="font-bold text-gray-900">밤 카라멜 생크림 라떼</h4>
+            <p class="text-xs text-gray-500 mt-0.5">고소한 제철 알밤과 달콤한 카라멜 드리즐의 하모니</p>
+            <p class="text-sm font-extrabold text-amber-900 mt-1">4,400원</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="flex gap-4 items-center p-3.5 bg-purple-50/70 rounded-2xl border border-purple-100">
+          <img src="images/menu-misutgaru.png" alt="블루베리 요거트 스무디" class="w-16 h-16 object-cover rounded-xl shadow-xs" onerror="this.src='https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=200&q=80'">
+          <div class="flex-1">
+            <span class="text-xs font-bold text-purple-700">인기 신메뉴</span>
+            <h4 class="font-bold text-gray-900">블루베리 요거트 스무디</h4>
+            <p class="text-xs text-gray-500 mt-0.5">상큼한 블루베리 마블링과 꾸덕한 그릭 요거트의 조화</p>
+            <p class="text-sm font-extrabold text-purple-900 mt-1">4,600원</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="flex gap-4 items-center p-3.5 bg-rose-50/70 rounded-2xl border border-rose-100">
+          <img src="images/menu-strawberry.png" alt="딸기 크런치 프라페" class="w-16 h-16 object-cover rounded-xl shadow-xs" onerror="this.src='https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=200&q=80'">
+          <div class="flex-1">
+            <span class="text-xs font-bold text-rose-700">달콤 충전</span>
+            <h4 class="font-bold text-gray-900">딸기 크런치 프라페</h4>
+            <p class="text-xs text-gray-500 mt-0.5">바삭한 딸기 크런치와 풍성한 휘핑크림이 듬뿍</p>
+            <p class="text-sm font-extrabold text-rose-900 mt-1">4,800원</p>
+          </div>
+        </div>
+
+        <button onclick="alert('가을 신메뉴 주문 화면으로 이동합니다!');" class="w-full bg-[#FFCE00] hover:bg-yellow-400 text-black font-extrabold py-3.5 rounded-xl text-sm transition mt-2">
+          신메뉴 지금 바로 주문하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 4: DRINK DETAIL & NUTRITION MODAL                                    -->
+  <!-- ========================================================================= -->
+  <div id="drink-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+  <div id="drink-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden opacity-0 scale-95 transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[85vh]">
+      <div class="relative h-48 bg-[#F7F4EE] flex items-center justify-center overflow-hidden">
+        <img id="drink-modal-img" src="" alt="음료 이미지" class="h-full w-auto object-contain">
+        <button id="close-drink-modal" class="absolute top-4 right-4 p-1.5 bg-black/50 text-white rounded-full hover:bg-black transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <span id="drink-modal-tag" class="absolute top-4 left-4 bg-[#FFCE00] text-black font-extrabold text-xs px-2.5 py-1 rounded">HOT/ICE</span>
+      </div>
+
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <div>
+          <h3 id="drink-modal-title" class="text-2xl font-black text-gray-900">메뉴명</h3>
+          <p id="drink-modal-desc" class="text-xs text-gray-500 mt-1">상세 설명</p>
+          <div class="mt-2 text-2xl font-black text-gray-950" id="drink-modal-price">0원</div>
+        </div>
+
+        <!-- Nutrition Table -->
+        <div class="p-3 bg-gray-50 rounded-2xl border border-gray-100 text-xs">
+          <p class="font-bold text-gray-700 mb-2">영양성분 정보 (1회 제공량 24oz 기준)</p>
+          <div class="grid grid-cols-4 gap-2 text-center">
+            <div class="p-2 bg-white rounded-lg border border-gray-100">
+              <span class="text-gray-400 block text-[10px]">칼로리</span>
+              <span class="font-bold text-gray-800">18 kcal</span>
+            </div>
+            <div class="p-2 bg-white rounded-lg border border-gray-100">
+              <span class="text-gray-400 block text-[10px]">당류</span>
+              <span class="font-bold text-gray-800">0.0 g</span>
+            </div>
+            <div class="p-2 bg-white rounded-lg border border-gray-100">
+              <span class="text-gray-400 block text-[10px]">단백질</span>
+              <span class="font-bold text-gray-800">1.2 g</span>
+            </div>
+            <div class="p-2 bg-white rounded-lg border border-gray-100">
+              <span class="text-gray-400 block text-[10px]">카페인</span>
+              <span class="font-bold text-gray-800">193 mg</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="drink-modal-order-btn" class="w-full bg-[#FFCE00] hover:bg-yellow-400 text-black font-extrabold py-3.5 rounded-xl text-sm transition">
+          메가오더로 바로 담기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
