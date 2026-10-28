@@ -36,7 +36,9 @@ mega-coffee/
 │   ├── menu-misutgaru.png  # 미숫가루 메뉴 이미지
 │   ├── order-banner.png    # 메가오더 스마트폰 & 매장 비주얼
 │   ├── event-banner1.png   # '지구인들아 힘내!' 이벤트 배너
-│   └── event-banner2.png   # '우리들의 여름 정거장' 이벤트 배너
+│   ├── event-banner2.png   # '우리들의 여름 정거장' 이벤트 배너
+│   ├── event-banner3.png   # '메가오더 첫 주문 할인' 이벤트 배너
+│   └── event-banner4.png   # '텀블러 에코 캠페인' 이벤트 배너
 └── README.md               # 프로젝트 안내 및 배포 매뉴얼
 ```
 

@@ -50,12 +50,6 @@ function initSmoothScroll() {
     touchMultiplier: 1.8,
   });
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
   // Synchronize Lenis with GSAP ScrollTrigger
   if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
     lenis.on('scroll', ScrollTrigger.update);
@@ -63,6 +57,12 @@ function initSmoothScroll() {
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
+  } else {
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }
 
   return lenis;
@@ -203,21 +203,30 @@ function initScrollAnimations(lenis) {
     });
   }
 
-  // MEGA EVENT Cards Reveal
-  const eventCards = document.querySelectorAll('.event-card');
-  if (eventCards.length > 0) {
-    gsap.from(eventCards, {
+  // MEGA EVENT Visible Cards Reveal
+  const visibleEventCards = document.querySelectorAll('#mega-event .grid:not(#hidden-events) .event-card');
+  if (visibleEventCards.length > 0) {
+    gsap.from(visibleEventCards, {
       scrollTrigger: {
         trigger: '#mega-event',
-        start: 'top 75%',
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+        once: true,
       },
-      y: 40,
+      y: 30,
       opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
+      duration: 0.7,
+      stagger: 0.15,
       ease: 'power2.out',
     });
   }
+
+  // Refresh ScrollTrigger after all page assets load
+  window.addEventListener('load', () => {
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  });
 
   // Floating Scroll-To-Top Button
   const scrollTopBtn = document.getElementById('scroll-top-btn');
@@ -564,6 +573,20 @@ function initEventSection() {
       hiddenEvents.classList.add('grid');
       btnText.textContent = '이벤트 접기';
       if (btnIcon) btnIcon.classList.add('rotate-180');
+
+      const extraCards = hiddenEvents.querySelectorAll('.event-card');
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(
+          extraCards,
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' }
+        );
+      } else {
+        extraCards.forEach((card) => {
+          card.style.opacity = '1';
+          card.style.transform = 'none';
+        });
+      }
 
       if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.refresh();

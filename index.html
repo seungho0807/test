@@ -193,13 +193,13 @@
           <div class="absolute inset-0 z-0">
             <img 
               src="images/hero-banner.png" 
-              alt="가을 신메뉴 출시 메인 배너" 
-              class="w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.05]"
+              alt="달콤한 가을 신메뉴 출시 메인 비주얼" 
+              class="w-full h-full object-cover object-right md:object-center filter brightness-[0.95] contrast-[1.03]"
               onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80'"
             >
             <!-- Contrast Gradients -->
-            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           </div>
 
           <!-- Slide Content -->
@@ -735,62 +735,72 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         
         <!-- EVENT BANNER 1: 지구인들아 힘내! (REFERENCE ITEM) -->
-        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#E8F5E9] flex flex-col cursor-pointer">
-          <div class="relative h-60 sm:h-72 overflow-hidden bg-emerald-50">
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-white flex flex-col cursor-pointer">
+          <div class="relative aspect-[16/9] overflow-hidden bg-emerald-50">
             <img 
               src="images/event-banner1.png" 
               alt="지구인들아 힘내 프로모션" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80'"
             >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <!-- Event Badge -->
-            <div class="absolute top-4 left-4 bg-emerald-500 text-white font-black text-xs px-3.5 py-1 rounded-full shadow-md">
-              진행중 이벤트
-            </div>
-            <!-- Banner Bottom Copy -->
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="text-xs text-emerald-300 font-bold uppercase tracking-wider">SEASON SPECIAL</span>
-              <h3 class="text-xl sm:text-2xl font-black mt-0.5">지구인들아 힘내!</h3>
-              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">활력 충전 상큼달콤 비타민 음료 & 디저트 페스티벌</p>
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white font-black text-xs px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              <span>진행중 이벤트</span>
             </div>
           </div>
-          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
-            <span class="text-xs text-gray-400 font-medium">이벤트 기간: 2026.09.01 ~ 11.30</span>
-            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
-              자세히 보기
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </span>
+          <!-- Card Content Body -->
+          <div class="p-6 bg-white flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">SEASON SPECIAL</span>
+                <span class="text-xs text-gray-400 font-medium">2026.09.01 ~ 11.30</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#E5B800] transition-colors mt-1">지구인들아 힘내!</h3>
+              <p class="text-xs sm:text-sm text-gray-500 font-normal mt-2 leading-relaxed">활력 충전 상큼달콤 비타민 음료 & 디저트 페스티벌</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-medium">메가MGC커피 전 매장</span>
+              <span class="text-xs font-bold text-gray-800 group-hover:text-black group-hover:translate-x-1 transition-all flex items-center gap-1.5">
+                자세히 보기
+                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FFCE00]"></i>
+              </span>
+            </div>
           </div>
         </div>
 
         <!-- EVENT BANNER 2: 우리들의 여름 정거장 (REFERENCE ITEM) -->
-        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#E1F5FE] flex flex-col cursor-pointer">
-          <div class="relative h-60 sm:h-72 overflow-hidden bg-sky-50">
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-white flex flex-col cursor-pointer">
+          <div class="relative aspect-[16/9] overflow-hidden bg-sky-50">
             <img 
               src="images/event-banner2.png" 
               alt="우리들의 여름 정거장 프로모션" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'"
             >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <!-- Event Badge -->
-            <div class="absolute top-4 left-4 bg-[#FFCE00] text-black font-black text-xs px-3.5 py-1 rounded-full shadow-md">
-              시즌 프로모션
-            </div>
-            <!-- Banner Bottom Copy -->
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="text-xs text-yellow-300 font-bold uppercase tracking-wider">MEGA COLLABORATION</span>
-              <h3 class="text-xl sm:text-2xl font-black mt-0.5">우리들의 여름 정거장</h3>
-              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">청량한 과일 에이드와 달콤한 디저트의 완벽한 힐링</p>
+            <div class="absolute top-4 left-4 bg-[#FFCE00] text-black font-black text-xs px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-black/60 animate-pulse"></span>
+              <span>시즌 프로모션</span>
             </div>
           </div>
-          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
-            <span class="text-xs text-gray-400 font-medium">이벤트 기간: 2026.10.01 ~ 12.15</span>
-            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
-              자세히 보기
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </span>
+          <!-- Card Content Body -->
+          <div class="p-6 bg-white flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-xs font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-lg">MEGA COLLABORATION</span>
+                <span class="text-xs text-gray-400 font-medium">2026.10.01 ~ 12.15</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#E5B800] transition-colors mt-1">우리들의 여름 정거장</h3>
+              <p class="text-xs sm:text-sm text-gray-500 font-normal mt-2 leading-relaxed">청량한 과일 에이드와 달콤한 디저트의 완벽한 힐링</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-medium">메가MGC커피 전 매장</span>
+              <span class="text-xs font-bold text-gray-800 group-hover:text-black group-hover:translate-x-1 transition-all flex items-center gap-1.5">
+                자세히 보기
+                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FFCE00]"></i>
+              </span>
+            </div>
           </div>
         </div>
 
@@ -800,56 +810,68 @@
       <div id="hidden-events" class="hidden grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-6">
         
         <!-- EVENT BANNER 3: 메가오더 첫 주문 할인 -->
-        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#FFF3E0] flex flex-col cursor-pointer">
-          <div class="relative h-60 sm:h-72 overflow-hidden bg-orange-50">
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-white flex flex-col cursor-pointer">
+          <div class="relative aspect-[16/9] overflow-hidden bg-orange-50">
             <img 
-              src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&q=80" 
+              src="images/event-banner3.png" 
               alt="메가오더 첫 주문 프로모션" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&q=80'"
             >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute top-4 left-4 bg-orange-500 text-white font-black text-xs px-3.5 py-1 rounded-full shadow-md">
-              APP EXCLUSIVE
-            </div>
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="text-xs text-orange-300 font-bold uppercase tracking-wider">APP DISCOUNT</span>
-              <h3 class="text-xl sm:text-2xl font-black mt-0.5">메가오더 첫 주문 1,000원 쿠폰</h3>
-              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">앱 신규 가입 즉시 지급되는 시원한 웰컴 혜택</p>
+            <div class="absolute top-4 left-4 bg-orange-500 text-white font-black text-xs px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              <span>APP EXCLUSIVE</span>
             </div>
           </div>
-          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
-            <span class="text-xs text-gray-400 font-medium">상시 혜택 제공</span>
-            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
-              쿠폰 받기
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </span>
+          <div class="p-6 bg-white flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-xs font-bold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-lg">APP DISCOUNT</span>
+                <span class="text-xs text-gray-400 font-medium">상시 혜택 제공</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#E5B800] transition-colors mt-1">메가오더 첫 주문 1,000원 쿠폰</h3>
+              <p class="text-xs sm:text-sm text-gray-500 font-normal mt-2 leading-relaxed">앱 신규 가입 즉시 지급되는 시원한 웰컴 혜택</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-medium">메가MGC커피 앱 전용</span>
+              <span class="text-xs font-bold text-gray-800 group-hover:text-black group-hover:translate-x-1 transition-all flex items-center gap-1.5">
+                쿠폰 받기
+                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FFCE00]"></i>
+              </span>
+            </div>
           </div>
         </div>
 
         <!-- EVENT BANNER 4: 텀블러 에코 캠페인 -->
-        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-[#E8EAF6] flex flex-col cursor-pointer">
-          <div class="relative h-60 sm:h-72 overflow-hidden bg-indigo-50">
+        <div class="event-card group rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 bg-white flex flex-col cursor-pointer">
+          <div class="relative aspect-[16/9] overflow-hidden bg-indigo-50">
             <img 
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" 
+              src="images/event-banner4.png" 
               alt="에코 텀블러 캠페인" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80'"
             >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute top-4 left-4 bg-indigo-500 text-white font-black text-xs px-3.5 py-1 rounded-full shadow-md">
-              ECO CAMPAIGN
-            </div>
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="text-xs text-indigo-300 font-bold uppercase tracking-wider">SAVE THE EARTH</span>
-              <h3 class="text-xl sm:text-2xl font-black mt-0.5">개인 텀블러 지참 시 300원 할인</h3>
-              <p class="text-xs sm:text-sm text-gray-200 font-light mt-1">환경도 지키고 할인도 받는 착한 데일리 습관</p>
+            <div class="absolute top-4 left-4 bg-indigo-500 text-white font-black text-xs px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              <span>ECO CAMPAIGN</span>
             </div>
           </div>
-          <div class="p-5 bg-white flex items-center justify-between border-t border-gray-50">
-            <span class="text-xs text-gray-400 font-medium">상시 진행</span>
-            <span class="text-xs font-bold text-gray-800 group-hover:text-black flex items-center gap-1">
-              자세히 보기
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </span>
+          <div class="p-6 bg-white flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg">SAVE THE EARTH</span>
+                <span class="text-xs text-gray-400 font-medium">상시 진행</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#E5B800] transition-colors mt-1">개인 텀블러 지참 시 300원 할인</h3>
+              <p class="text-xs sm:text-sm text-gray-500 font-normal mt-2 leading-relaxed">환경도 지키고 할인도 받는 착한 데일리 습관</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-medium">전국 참여 매장</span>
+              <span class="text-xs font-bold text-gray-800 group-hover:text-black group-hover:translate-x-1 transition-all flex items-center gap-1.5">
+                자세히 보기
+                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FFCE00]"></i>
+              </span>
+            </div>
           </div>
         </div>
 
